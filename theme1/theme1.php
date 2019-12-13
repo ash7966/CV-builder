@@ -7,7 +7,7 @@ if(mysqli_connect_errno())
 		echo "failed to connect to mysqli:".mysqli_connect_error();
 	}
 
-$_SESSION["email"]= 'sam28@gmail.com';
+//$_SESSION["email"]= 'sam28@gmail.com';
 $query1 = "SELECT * FROM personal_info WHERE user_id = '" .$_SESSION["email"] ."'";
 $result1 = mysqli_query($cn,$query1);
 $row1 = mysqli_fetch_assoc($result1);
