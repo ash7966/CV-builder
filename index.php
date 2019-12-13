@@ -68,13 +68,32 @@ function carousel2() {
     setTimeout(carousel2, 6000); // Change image every 2 seconds
 }
     
+function checkPassword(form) { 
+                password1 = form.password.value; 
+                password2 = form.confirm.value; 
+  
+                // If password not entered 
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+            } 
 </script>
     
     <div class="popup" id="popup">
         <div class="popup_content"> 
               <div id="login-box">
                  <div class="left-box">
-                 <form action="insertReg.php"  method="POST">
+                 <form action="insertReg.php" onSubmit = "return checkPassword(this)"  method="POST">
                     <h1>Sign Up</h1>
                     <input type ="text" name="username" placeholder="Username.." required />
                     <input type ="text" name="email" placeholder="Email ID.." required />
@@ -101,4 +120,5 @@ function carousel2() {
 <?php include('about.php'); ?>
 
 </body>
+
 </html>

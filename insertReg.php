@@ -16,7 +16,9 @@ $cn=mysqli_connect("localhost","root","","db");
 if(isset($_POST["signup"]))
 {
 	$cn=makeconnection();
-	$s="insert into login_info(user_id,password,user_name,contact_no) values('" . $_POST["email"] ."','" . $_POST["password"] ."','" . $_POST["username"] ."','" . $_POST["contact_number"] ."')";
+    
+    $password= password_hash($_POST["password"], PASSWORD_DEFAULT);
+	$s="insert into login_info(user_id,password,user_name,contact_no) values('" . $_POST["email"] ."','" . $password ."','" . $_POST["username"] ."','" . $_POST["contact_number"] ."')";
     
 
 	if(mysqli_query($cn,$s)){
@@ -26,7 +28,7 @@ if(isset($_POST["signup"]))
         
     }
     else{
-        echo("Error: " . mysql_error($cn));
+        echo("Error: " . mysqli_error($cn));
     }
 	mysqli_close($cn);
 	//echo "<script>alert('Record Saved'); window.history.go(-2);</script>";

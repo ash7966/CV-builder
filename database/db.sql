@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2019 at 09:49 AM
+-- Generation Time: Dec 13, 2019 at 03:53 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -140,33 +140,12 @@ INSERT INTO `interest` (`interest_id`, `user_id`, `interest1`, `interest2`, `int
 -- --------------------------------------------------------
 
 --
--- Table structure for table `language`
---
-
-CREATE TABLE `language` (
-  `user_id` varchar(30) NOT NULL,
-  `lang1` varchar(20) NOT NULL,
-  `lang2` varchar(20) NOT NULL,
-  `lang3` varchar(20) NOT NULL,
-  `lang4` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `language`
---
-
-INSERT INTO `language` (`user_id`, `lang1`, `lang2`, `lang3`, `lang4`) VALUES
-('hb20156@gmail.com', 'Hindi', 'English', 'Marathi', '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `login_info`
 --
 
 CREATE TABLE `login_info` (
   `user_id` varchar(40) NOT NULL,
-  `password` varchar(10) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `user_name` varchar(30) NOT NULL,
   `contact_no` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -176,15 +155,14 @@ CREATE TABLE `login_info` (
 --
 
 INSERT INTO `login_info` (`user_id`, `password`, `user_name`, `contact_no`) VALUES
-('ashishnegi7966@gmail.com', 'ashish@123', 'Ashish Negi ', 7500569628),
-('disha123@gmail', 'disha123', 'disha', 8881140462),
-('gbisht55555@gmail.com', 'gaurav123', 'gaurav', 7017405697),
-('gbisht555@gmail.com', 'gbisht@123', 'Gaurav Bisht', 7017405697),
-('hb20156@gmail.com', 'harish@123', 'Harish Bisht', 8384871840),
-('jack28@gmail.com', 'jack@123', 'jack', 7500569628),
-('jiteshjoshi583@gmail.com', 'jitesh@123', 'Jitesh Joshi', 8077557596),
-('kabitachiral456@gmail.com', 'kabita@123', 'Kavita Chiral', 7895515667),
-('sam28@gmail.com', 'sam@123', 'sam', 1234567894);
+('ashishnegi7966@gmail.com', '$2y$10$nHW3xpREyukqbedalhtOxee3pgxLoqCv9NyyiFajRifZ8aaPSapby', 'Ashish Negi ', 7500569628),
+('disha123@gmail', '$2y$10$OAU9Beb2ha8vghrk/AFJjuGPkq/8cO3xsjMC5NUJRhiHjHZj/eFOe', 'disha', 8881140462),
+('gbisht555@gmail.com', '$2y$10$FZxmi81wwP2OBEiZo/8XdOhii/9Vpjb.RJW7D6b8e9BpWoauKorDa', 'Gaurav Bisht', 7017405697),
+('hb20156@gmail.com', '$2y$10$k0sldq8Xb4S7vNdVIAJhduZs2RMLSzix6hQ8YP39k/s8Nrx.dv8QG', 'Harish Bisht', 8384871840),
+('jack28@gmail.com', '$2y$10$tkgqVWpPGr0FbCQK/PzGg.tmmp6jA5lvyZ/uySAeqsBniSrDnzz8O', 'jack', 7500569628),
+('jiteshjoshi583@gmail.com', '$2y$10$TGPesh6kXiZ/AKvcYU7Z4ebRJLc77yTRV56sp/rRzPaj.g5VDdaTS', 'Jitesh Joshi', 8077557596),
+('kabitachiral456@gmail.com', '$2y$10$KiSsr7MPYPbeN8NFfrfG3urZZr1u64CYfZ4jELIxaftVAP1/L2/Mq', 'Kavita Chiral', 7895515667),
+('sam28@gmail.com', '$2y$10$iWQ9Kcc1i525YW0LiVz.N./ohjDJpsMDc.96rbiUSLJd97pdViejC', 'sam', 1234567894);
 
 -- --------------------------------------------------------
 
@@ -210,7 +188,6 @@ CREATE TABLE `personal_info` (
 INSERT INTO `personal_info` (`user_id`, `user_name`, `linkedin`, `contact_no`, `user_dob`, `jobprofile`, `user_address`, `user_photo`) VALUES
 ('ashishnegi7966@gmail.com', 'Ashish Negi ', 'Suraj Snax', 7500569628, '1999-02-05', '0', 'Pirumadara, Ramnagar, Nainital District \r\nUttrakhand', ''),
 ('disha123@gmail', 'disha pandey', 'disha', 8881140462, '1997-06-24', 'Data Analyst', 'haldwani', ''),
-('gbisht55555@gmail.com', 'gaurav', 'gaur@24', 7017405697, '1997-06-24', 'Data Analyst', 'ramnagar', ''),
 ('gbisht555@gmail.com', 'Gaurav Bisht', 'Jaswant Singh', 7017405697, '1997-06-24', '0', 'ramnagar,uttarakhand', ''),
 ('hb20156@gmail.com', 'Harish Bisht', 'west_wind', 8384871840, '2019-08-03', 'System Analyst', '29-A Kashipur Uttrakhand', 'hb.jpg'),
 ('jack28@gmail.com', 'jay singh', 'jay28singh', 8926231452, '1996-06-02', 'Web Developer', 'Dehradun', ''),
@@ -337,12 +314,6 @@ ALTER TABLE `education`
 --
 ALTER TABLE `interest`
   ADD PRIMARY KEY (`interest_id`);
-
---
--- Indexes for table `language`
---
-ALTER TABLE `language`
-  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `login_info`
