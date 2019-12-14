@@ -18,7 +18,7 @@ if(isset($_POST["submit"]))
     $x=mysqli_query($cn,$s1);
     $row=mysqli_fetch_array($x);
 
-	if(password_verify('123',$row[1]))
+	if(password_verify($_POST["t2"],$row[1]))
 	{
 		$_SESSION["User_id"]= $_POST["t1"];
 		$_SESSION["user"]=$row[2];
